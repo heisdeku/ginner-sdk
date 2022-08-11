@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample HTML for the Widget</title>
+    <style>
+      .app-loader {
+        text-align: center;
+        color: white;
+        margin-right: -30px;
+        width: 100%;
+        position: fixed;
+        top: 30vh;
+        display: block;
+      }
+      @-webkit-keyframes app-loader__spinner {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      .app-loader__spinner {
+        position: relative;
+        display: inline-block;
+        width: fit-content;
+      }
+      .app-loader__spinner div {
+        position: absolute;
+        -webkit-animation: app-loader__spinner linear 1s infinite;
+        animation: app-loader__spinner linear 1s infinite;
+        background: white;
+        width: 10px;
+        height: 30px;
+        border-radius: 40%;
+        -webkit-transform-origin: 5px 65px;
+        transform-origin: 5px 65px;
+      }
+      .app-loader__spinner div:nth-child(1) {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-animation-delay: -0.916666666666667s;
+        animation-delay: -0.916666666666667s;
+      }
+      .app-loader__spinner div:nth-child(2) {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+        -webkit-animation-delay: -0.833333333333333s;
+        animation-delay: -0.833333333333333s;
+      }
+      .app-loader__spinner div:nth-child(3) {
+        -webkit-transform: rotate(60deg);
+        transform: rotate(60deg);
+        -webkit-animation-delay: -0.75s;
+        animation-delay: -0.75s;
+      }
+      .app-loader__spinner div:nth-child(4) {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        -webkit-animation-delay: -0.666666666666667s;
+        animation-delay: -0.666666666666667s;
+      }
+      .app-loader__spinner div:nth-child(5) {
+        -webkit-transform: rotate(120deg);
+        transform: rotate(120deg);
+        -webkit-animation-delay: -0.583333333333333s;
+        animation-delay: -0.583333333333333s;
+      }
+      .app-loader__spinner div:nth-child(6) {
+        -webkit-transform: rotate(150deg);
+        transform: rotate(150deg);
+        -webkit-animation-delay: -0.5s;
+        animation-delay: -0.5s;
+      }
+      .app-loader__spinner div:nth-child(7) {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        -webkit-animation-delay: -0.416666666666667s;
+        animation-delay: -0.416666666666667s;
+      }
+      .app-loader__spinner div:nth-child(8) {
+        -webkit-transform: rotate(210deg);
+        transform: rotate(210deg);
+        -webkit-animation-delay: -0.333333333333333s;
+        animation-delay: -0.333333333333333s;
+      }
+      .app-loader__spinner div:nth-child(9) {
+        -webkit-transform: rotate(240deg);
+        transform: rotate(240deg);
+        -webkit-animation-delay: -0.25s;
+        animation-delay: -0.25s;
+      }
+      .app-loader__spinner div:nth-child(10) {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+        -webkit-animation-delay: -0.166666666666667s;
+        animation-delay: -0.166666666666667s;
+      }
+      .app-loader__spinner div:nth-child(11) {
+        -webkit-transform: rotate(300deg);
+        transform: rotate(300deg);
+        -webkit-animation-delay: -0.083333333333333s;
+        animation-delay: -0.083333333333333s;
+      }
+      .app-loader__spinner div:nth-child(12) {
+        -webkit-transform: rotate(330deg);
+        transform: rotate(330deg);
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+      }
+      .app-loader__spinner {
+        -webkit-transform: translate(-20px, -20px) scale(0.2)
+          translate(20px, 20px);
+        transform: translate(-20px, -20px) scale(0.2) translate(20px, 20px);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="pay-widget-wrapper"
+      style="
+        position: fixed;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999999999;
+        height: 100%;
+        width: 100%;
+        color: transparent;
+        background: rgba(0, 0, 0, 0.6);
+        visibility: visible;
+        margin: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      "
+    >
+      <div id="pay-app-loader" class="app-loader">
+        <div class="app-loader__spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

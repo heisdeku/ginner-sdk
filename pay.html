@@ -1,0 +1,46 @@
+<!--pay.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, maximum-scale=1, user-scalable=0"
+    />
+    <title>Pay SDK</title>
+  </head>
+
+  <body>
+    <div class="p-5">
+      <button id="pay">Pay now</button>
+    </div>
+    <script type="application/javascript">
+      const launchPay = document.getElementById("pay");
+      launchPay.onclick = () => {
+        const config = {
+          publicKey: "PUBLIC_KEY",
+          userReference: "USER_REFERENCE",
+          amount: 10000,
+          currency: "NGN",
+          onSuccess: (response) => {
+            console.log("onSuccess called with:", response);
+          },
+          onError: (response) => {
+            console.log("onError called with:", response);
+          },
+          onClose: (response) => {
+            console.log("onClose called with:", response);
+          },
+        };
+        const pay = new Pay(config);
+        pay.setup();
+        pay.open();
+      };
+    </script>
+
+    <script
+      type="application/javascript"
+      src="./sdk/sdk-pay/v1/pay.js"
+    ></script>
+  </body>
+</html>
