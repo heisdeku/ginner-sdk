@@ -124,16 +124,28 @@ const App = () => {
 
   return (
     <div className="pay__container">
-      <p>This is the secret key: 123</p>
-      {Object.keys(config).map((key) => (
+      <h2 className="pay__header">
+        You're are about to make an airtime payment
+      </h2>
+      <div className="pay__business">
+        <div className="business__avatar"></div>
+        <h4 className="business__name">Jekomo Sexual Enterprises</h4>
+      </div>
+
+      {Object?.keys(config).map((key) => (
         <p key={key}>
           This is the {key}: {config[key]}
         </p>
       ))}
-
-      <button onClick={handleCloseClick}>Close SDK</button>
-      <button onClick={handleSuccessClick}>Simulate success</button>
-      <button onClick={handleErrorClick}>Simulate error</button>
+      <p className="disclaimer">
+        By clicking the button below, you agree to{" "}
+        <b className="disclaimer__link">Zeddpay T&C</b>
+      </p>
+      <div className="pay__actions grid-center">
+        <button onClick={handleCloseClick}>Close SDK</button>
+        <button onClick={handleSuccessClick}>Simulate success</button>
+        <button onClick={handleErrorClick}>Simulate error</button>
+      </div>
     </div>
   );
 };

@@ -11,8 +11,8 @@
   </head>
 
   <body>
-    <div class="p-5">
-      <button id="pay">Pay now</button>
+    <div class="p-5" style="display: flex; align-items: center; height: 100vh;">
+      <button style="width: 100%; background-color: transparent; color: #007de8; border: 1px solid #007DE8; height: 48px; font-size: 20px;" id="pay">Pay With 💸</button>
     </div>
     <script type="application/javascript">
       const launchPay = document.getElementById("pay");
@@ -23,13 +23,13 @@
           amount: 10000,
           currency: "NGN",
           onSuccess: (response) => {
-            console.log("onSuccess called with:", response);
+            alert("onSuccess called with:", response);
           },
           onError: (response) => {
-            console.log("onError called with:", response);
+            alert("onError called with:", response);
           },
           onClose: (response) => {
-            console.log("onClose called with:", response);
+            alert("onClose called with:", response);
           },
         };
         const pay = new Pay(config);
