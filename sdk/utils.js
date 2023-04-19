@@ -3,7 +3,7 @@
 
 // the origin should point to your hosted app (React, Vue etc) in production,
 //  but for development, it would point to localhost of your app (pay-app)
-const origin = "http://localhost:3000";
+const origin = " http://localhost:5173/";
 const iFrameId = "pay-frame-id";
 const containerId = "pay-widget-wrapper";
 

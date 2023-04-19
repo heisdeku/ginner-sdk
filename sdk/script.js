@@ -1,5 +1,5 @@
 const utils = require("./utils");
-const origin = "http://localhost:3000";
+const origin = "http://localhost:5173";
 
 function isRequired(key) {
   throw new Error(`${key} is required`);
@@ -32,7 +32,9 @@ Pay.prototype.setup = function () {
 Pay.prototype.open = function () {
   Pay.prototype.utils.openWidget({ config: this.config, sdkType: "send" });
   const handleEvents = (event) => {
-    if (event.data.appOrigin !== origin) return;
+    if (event.data.origin !== origin) {
+      return;
+    }
     switch (event.data.type) {
       case "pay.success":
         Pay.prototype.success(event.data);
@@ -45,10 +47,11 @@ Pay.prototype.open = function () {
         break;
     }
   };
-
   Pay.prototype.eventHandler = handleEvents.bind(this);
   window.addEventListener("message", this.eventHandler, false);
 };
+
+window.addEventListener("message", Pay.prototype.eventHandler, false);
 
 Pay.prototype.close = function (data) {
   window.removeEventListener("message", this.eventHandler, false);
